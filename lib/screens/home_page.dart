@@ -1,7 +1,6 @@
 import 'package:custom_like_button/custom_like_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:like_button/like_button.dart';
 import 'package:salad_prog/utils/utils_data.dart';
 
 class HomePage extends StatefulWidget {
