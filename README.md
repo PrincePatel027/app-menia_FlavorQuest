@@ -4,9 +4,9 @@ Salad Prog is a Flutter application that helps users browse through salad recipe
 
 ## Features
 
-- **Home Page:** <br>&nbsp; Browse through a collection of salad recipes. The home page displays a list of categories and allows users to select a category to view related recipes. Users can also search for their favorite food and navigate to the favorite page.
-- **Detail Page:** View detailed information about a specific recipe.
-- **Favorite Page:** Save your favorite recipes for quick access.
+- **Home Page:** Browse through a collection of salad recipes. The home page displays a list of categories and allows users to select a category to view related recipes. Users can also search for their favorite food and navigate to the favorite page.<br>
+- **Detail Page:** View detailed information about a specific recipe.<br>
+- **Favorite Page:** Save your favorite recipes for quick access.<br>
 
 ## Project Structure
 
