@@ -209,7 +209,7 @@ class _HomePageState extends State<HomePage> {
                                                   2.4,
                                               decoration: BoxDecoration(
                                                 color: Colors.grey
-                                                    .withOpacity(0.2),
+                                                    .withOpacity(0.4),
                                                 borderRadius:
                                                     BorderRadius.circular(15),
                                               ),
@@ -238,6 +238,15 @@ class _HomePageState extends State<HomePage> {
                                                             setState(() {
                                                               el['isLiked'] =
                                                                   !el['isLiked'];
+                                                              (el['isLiked'])
+                                                                  ? Data
+                                                                      .likedItems
+                                                                      .add(el)
+                                                                  : Data
+                                                                      .likedItems
+                                                                      .remove(
+                                                                          el);
+                                                              Data.setToListConverter();
                                                             });
                                                           },
                                                           child:
@@ -340,19 +349,20 @@ class _HomePageState extends State<HomePage> {
                                                               Navigator.of(
                                                                       context)
                                                                   .pushNamed(
-                                                                      'cartPage');
+                                                                      'cartPage',
+                                                                      arguments:
+                                                                          el);
                                                             });
                                                           },
                                                           child: Container(
                                                             height: 52,
                                                             width: 50,
                                                             decoration:
-                                                                BoxDecoration(
-                                                              color: Colors
-                                                                  .green
-                                                                  .shade300,
+                                                                const BoxDecoration(
+                                                              color:
+                                                                  Colors.green,
                                                               borderRadius:
-                                                                  const BorderRadius
+                                                                  BorderRadius
                                                                       .only(
                                                                 topLeft: Radius
                                                                     .circular(
@@ -449,7 +459,7 @@ class _HomePageState extends State<HomePage> {
       decoration: BoxDecoration(
         color: (catagorySelected == e['categoryName'])
             ? Colors.green.shade300
-            : Colors.grey.withOpacity(0.4),
+            : Colors.green,
         borderRadius: BorderRadius.circular(20),
       ),
       alignment: Alignment.center,

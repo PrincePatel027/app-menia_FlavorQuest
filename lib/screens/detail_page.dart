@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:like_button/like_button.dart';
 
 class Detailpage extends StatefulWidget {
@@ -73,7 +73,7 @@ class _DetailpageState extends State<Detailpage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
+                  SizedBox(
                     height: Height / 9,
                     width: Width,
                   ),
@@ -87,7 +87,7 @@ class _DetailpageState extends State<Detailpage> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Row(
                           // crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,9 +95,9 @@ class _DetailpageState extends State<Detailpage> {
                             InkWell(
                               onTap: () {
                                 setState(() {
-                                  (itemCount >= 1)
-                                      ? itemCount -= 1
-                                      : itemCount = 0;
+                                  (DataDetailPage['itemCount'] >= 1)
+                                      ? DataDetailPage['itemCount'] -= 1
+                                      : DataDetailPage['itemCount'] = 0;
                                 });
                               },
                               child: const Icon(
@@ -108,7 +108,7 @@ class _DetailpageState extends State<Detailpage> {
                             ),
                             Text(
                               textAlign: TextAlign.center,
-                              '$itemCount',
+                              '${DataDetailPage['itemCount']}',
                               style: const TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
@@ -118,7 +118,7 @@ class _DetailpageState extends State<Detailpage> {
                             InkWell(
                               onTap: () {
                                 setState(() {
-                                  itemCount += 1;
+                                  DataDetailPage['itemCount'] += 1;
                                 });
                               },
                               child: const Icon(
@@ -228,16 +228,9 @@ class _DetailpageState extends State<Detailpage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-
-                  ///
-                  ///
-                  ///
-                  ///
-                  ///
-                  ///
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -255,7 +248,13 @@ class _DetailpageState extends State<Detailpage> {
                                 borderRadius: BorderRadius.circular(16),
                               ),
                               alignment: Alignment.center,
-                              child: Text('${e}'),
+                              child: Text(
+                                '$e',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -265,20 +264,28 @@ class _DetailpageState extends State<Detailpage> {
                   const SizedBox(
                     height: 15,
                   ),
-                  Container(
-                    height: Height / 18,
-                    width: Width,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    alignment: Alignment.center,
-                    child: const Text(
-                      'Add To Cart',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        Navigator.of(context)
+                            .pushNamed("cartPage", arguments: DataDetailPage);
+                      });
+                    },
+                    child: Container(
+                      height: Height / 18,
+                      width: Width,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Add To Cart',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),
@@ -287,26 +294,6 @@ class _DetailpageState extends State<Detailpage> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget indrodientSelect({dynamic e}) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 10.0),
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-        ),
-        height: 60,
-        decoration: BoxDecoration(
-          color: (selectedIngredients.contains(e))
-              ? Colors.green
-              : Colors.grey.withOpacity(0.4),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        alignment: Alignment.center,
-        child: Text('${e}'),
       ),
     );
   }

@@ -11,7 +11,7 @@ void main() {
       routes: {
         '/': (context) => const HomePage(),
         'detailPage': (context) => const Detailpage(),
-        'fauritePage': (context) => const FauritePage(),
+        'fauritePage': (context) => FauritePage(),
         'cartPage': (context) => const CartPage(),
       },
     ),

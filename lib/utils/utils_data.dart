@@ -1,11 +1,24 @@
 class Data {
-  // static bool fauriteIcon = false;
-
+  /// Liked Items
   static Set<Map<String, dynamic>> likedItems = {};
   static List<Map<String, dynamic>> likedItemsList = [];
-
   static setToListConverter() {
     likedItemsList = likedItems.toList();
+  }
+
+  /// cart items
+  static Set<Map<String, dynamic>> cartItemSet = {};
+  static List<Map<String, dynamic>> cartItemList = [];
+  static setToListConverterCart() {
+    cartItemList = cartItemSet.toList();
+  }
+
+  static double totalPrice() {
+    double subtotal = 0.0;
+    for (var item in Data.cartItemList) {
+      subtotal += item['price'] * item['itemCount'];
+    }
+    return subtotal;
   }
 
   static List<Map<String, dynamic>> itemData = [
@@ -14,6 +27,7 @@ class Data {
       "items": [
         {
           "id": 1,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Greek Salad",
           "description":
@@ -35,6 +49,7 @@ class Data {
         },
         {
           "id": 2,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Caesar Salad",
           "description":
@@ -53,6 +68,7 @@ class Data {
         },
         {
           "id": 3,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Caprese Salad",
           "description":
@@ -71,6 +87,7 @@ class Data {
         },
         {
           "id": 4,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Spinach Salad",
           "description":
@@ -90,6 +107,7 @@ class Data {
         },
         {
           "id": 5,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Nicoise Salad",
           "description":
@@ -111,6 +129,7 @@ class Data {
         },
         {
           "id": 6,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Waldorf Salad",
           "description":
@@ -131,6 +150,7 @@ class Data {
         },
         {
           "id": 7,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Cobb Salad",
           "description":
@@ -157,6 +177,7 @@ class Data {
       "items": [
         {
           "id": 1,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Grilled Chicken",
           "description":
@@ -176,6 +197,7 @@ class Data {
         },
         {
           "id": 2,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Classic BLT",
           "description":
@@ -195,6 +217,7 @@ class Data {
         },
         {
           "id": 3,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Turkey Avocado",
           "description":
@@ -215,6 +238,7 @@ class Data {
         },
         {
           "id": 4,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Vegetarian Caprese",
           "description":
@@ -234,6 +258,7 @@ class Data {
         },
         {
           "id": 5,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Philly Cheesesteak",
           "description":
@@ -253,6 +278,7 @@ class Data {
         },
         {
           "id": 6,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Cuban",
           "description":
@@ -273,6 +299,7 @@ class Data {
         },
         {
           "id": 7,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Tuna Salad",
           "description":
@@ -292,6 +319,7 @@ class Data {
         },
         {
           "id": 8,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Club",
           "description":
@@ -313,6 +341,7 @@ class Data {
         },
         {
           "id": 9,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Veggie Delight",
           "description":
@@ -335,6 +364,7 @@ class Data {
         },
         {
           "id": 10,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Italian Submarine",
           "description":
@@ -364,6 +394,7 @@ class Data {
       "items": [
         {
           "id": 1,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Classic Cheese",
           "description":
@@ -386,6 +417,7 @@ class Data {
         },
         {
           "id": 2,
+          'itemCount': 1,
           "isLiked": false,
           "name": "BBQ Bacon",
           "description":
@@ -407,6 +439,7 @@ class Data {
         },
         {
           "id": 3,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Mushroom Swiss",
           "description":
@@ -428,6 +461,7 @@ class Data {
         },
         {
           "id": 4,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Spicy Jalapeno",
           "description":
@@ -450,6 +484,7 @@ class Data {
         },
         {
           "id": 5,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Avocado Turkey",
           "description":
@@ -471,6 +506,7 @@ class Data {
         },
         {
           "id": 6,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Veggie Black Bean",
           "description":
@@ -491,6 +527,7 @@ class Data {
         },
         {
           "id": 7,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Double Bacon",
           "description":
@@ -513,6 +550,7 @@ class Data {
         },
         {
           "id": 8,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Teriyaki Chicken",
           "description":
@@ -534,6 +572,7 @@ class Data {
         },
         {
           "id": 9,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Portobello Spe..",
           "description":
@@ -554,6 +593,7 @@ class Data {
         },
         {
           "id": 10,
+          'itemCount': 1,
           "isLiked": false,
           "name": "Pesto Turkey",
           "description":
@@ -578,6 +618,7 @@ class Data {
 
   // {
   //   "id": 8,
+  // 'itemCount': 1,
   //   "name": "Kale Salad",
   //   "description":
   //       "Fresh kale, cranberries, almonds, and goat cheese tossed in a lemon vinaigrette.",
@@ -596,6 +637,7 @@ class Data {
   // },
   // {
   //   "id": 9,
+  // 'itemCount': 1,
   //   "name": "Taco Salad",
   //   "description":
   //       "Crispy tortilla bowl filled with seasoned ground beef, lettuce, tomatoes, cheese, and salsa.",
