@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:custom_like_button/custom_like_button.dart';
 import 'package:flutter/material.dart';
 import 'package:salad_prog/utils/utils_data.dart';
@@ -106,7 +108,8 @@ class _HomePageState extends State<HomePage> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            Navigator.of(context).pushNamed("fauritePage");
+                            Navigator.of(context)
+                                .pushNamed("fauritePage", arguments: e);
                           });
                         },
                         child: const Icon(
