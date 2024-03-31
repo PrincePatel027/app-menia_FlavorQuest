@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salad_prog/screens/add_to_cart_page.dart';
 import 'package:salad_prog/screens/detail_page.dart';
 import 'package:salad_prog/screens/faurite_page.dart';
 import 'package:salad_prog/screens/home_page.dart';
@@ -7,11 +8,11 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: HomePage(),
       routes: {
-        '/': (context) => HomePage(),
-        'detailPage': (context) => Detailpage(),
-        'fauritePage': (context) => FauritePage(),
+        '/': (context) => const HomePage(),
+        'detailPage': (context) => const Detailpage(),
+        'fauritePage': (context) => const FauritePage(),
+        'cartPage': (context) => const CartPage(),
       },
     ),
   );

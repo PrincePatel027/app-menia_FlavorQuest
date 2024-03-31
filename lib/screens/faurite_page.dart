@@ -16,7 +16,7 @@ class _FauritePageState extends State<FauritePage> {
       appBar: AppBar(),
       body: Container(
         alignment: Alignment.center,
-        child: Text("${Data.likedItems}"),
+        child: Text("${Data.likedItemsList}"),
       ),
     );
   }

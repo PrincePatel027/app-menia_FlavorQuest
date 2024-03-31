@@ -2,10 +2,10 @@ class Data {
   // static bool fauriteIcon = false;
 
   static Set<Map<String, dynamic>> likedItems = {};
-  static List<Map<String, dynamic>> LikedItemsList = [];
+  static List<Map<String, dynamic>> likedItemsList = [];
 
   static setToListConverter() {
-    LikedItemsList = likedItems.toList();
+    likedItemsList = likedItems.toList();
   }
 
   static List<Map<String, dynamic>> itemData = [
@@ -14,6 +14,7 @@ class Data {
       "items": [
         {
           "id": 1,
+          "isLiked": false,
           "name": "Greek Salad",
           "description":
               "Fresh lettuce, tomatoes, cucumbers, red onions, olives, and feta cheese tossed in Greek dressing.",
@@ -34,6 +35,7 @@ class Data {
         },
         {
           "id": 2,
+          "isLiked": false,
           "name": "Caesar Salad",
           "description":
               "Crisp romaine lettuce, croutons, and shredded Parmesan cheese tossed in Caesar dressing.",
@@ -51,6 +53,7 @@ class Data {
         },
         {
           "id": 3,
+          "isLiked": false,
           "name": "Caprese Salad",
           "description":
               "Fresh mozzarella cheese, tomatoes, and basil leaves drizzled with balsamic glaze.",
@@ -68,6 +71,7 @@ class Data {
         },
         {
           "id": 4,
+          "isLiked": false,
           "name": "Spinach Salad",
           "description":
               "Tender baby spinach, bacon bits, hard-boiled eggs, and mushrooms tossed in a tangy vinaigrette.",
@@ -86,6 +90,7 @@ class Data {
         },
         {
           "id": 5,
+          "isLiked": false,
           "name": "Nicoise Salad",
           "description":
               "Seared tuna, boiled potatoes, green beans, tomatoes, olives, and hard-boiled eggs served over mixed greens.",
@@ -106,6 +111,7 @@ class Data {
         },
         {
           "id": 6,
+          "isLiked": false,
           "name": "Waldorf Salad",
           "description":
               "Crisp apples, celery, walnuts, and grapes mixed with mayonnaise and served over lettuce.",
@@ -125,6 +131,7 @@ class Data {
         },
         {
           "id": 7,
+          "isLiked": false,
           "name": "Cobb Salad",
           "description":
               "Grilled chicken, avocado, bacon, hard-boiled eggs, tomatoes, and blue cheese served over mixed greens.",
@@ -150,6 +157,7 @@ class Data {
       "items": [
         {
           "id": 1,
+          "isLiked": false,
           "name": "Grilled Chicken",
           "description":
               "Grilled chicken breast, roasted red peppers, spinach, and provolone cheese on ciabatta bread, pressed to perfection.",
@@ -168,6 +176,7 @@ class Data {
         },
         {
           "id": 2,
+          "isLiked": false,
           "name": "Classic BLT",
           "description":
               "Crispy bacon, fresh lettuce, and ripe tomatoes with mayo on toasted whole wheat bread.",
@@ -186,6 +195,7 @@ class Data {
         },
         {
           "id": 3,
+          "isLiked": false,
           "name": "Turkey Avocado",
           "description":
               "Sliced turkey breast, avocado, crispy bacon, lettuce, and tomato wrapped in a flour tortilla.",
@@ -205,6 +215,7 @@ class Data {
         },
         {
           "id": 4,
+          "isLiked": false,
           "name": "Vegetarian Caprese",
           "description":
               "Fresh mozzarella cheese, ripe tomatoes, basil leaves, and balsamic glaze on ciabatta bread.",
@@ -223,6 +234,7 @@ class Data {
         },
         {
           "id": 5,
+          "isLiked": false,
           "name": "Philly Cheesesteak",
           "description":
               "Thinly sliced steak, sautéed onions, bell peppers, and melted provolone cheese on a toasted hoagie roll.",
@@ -241,6 +253,7 @@ class Data {
         },
         {
           "id": 6,
+          "isLiked": false,
           "name": "Cuban",
           "description":
               "Roasted pork, ham, Swiss cheese, pickles, and mustard on pressed Cuban bread.",
@@ -260,6 +273,7 @@ class Data {
         },
         {
           "id": 7,
+          "isLiked": false,
           "name": "Tuna Salad",
           "description":
               "House-made tuna salad with celery, onions, and mayo, served on whole wheat bread.",
@@ -278,6 +292,7 @@ class Data {
         },
         {
           "id": 8,
+          "isLiked": false,
           "name": "Club",
           "description":
               "Triple-decker sandwich with turkey, ham, bacon, lettuce, tomato, and mayo on toasted white bread.",
@@ -298,6 +313,7 @@ class Data {
         },
         {
           "id": 9,
+          "isLiked": false,
           "name": "Veggie Delight",
           "description":
               "Sliced avocado, cucumber, bell peppers, lettuce, tomato, and sprouts with hummus on whole grain bread.",
@@ -319,6 +335,7 @@ class Data {
         },
         {
           "id": 10,
+          "isLiked": false,
           "name": "Italian Submarine",
           "description":
               "Italian meats (salami, pepperoni, ham), provolone cheese, lettuce, tomato, onions, banana peppers, and Italian dressing on a sub roll.",
@@ -347,6 +364,7 @@ class Data {
       "items": [
         {
           "id": 1,
+          "isLiked": false,
           "name": "Classic Cheese",
           "description":
               "Juicy beef patty topped with melted American cheese, lettuce, tomato, onions, pickles, and mayo on a toasted sesame seed bun.",
@@ -368,6 +386,7 @@ class Data {
         },
         {
           "id": 2,
+          "isLiked": false,
           "name": "BBQ Bacon",
           "description":
               "Grilled beef patty topped with crispy bacon, cheddar cheese, BBQ sauce, lettuce, and crispy onion straws on a brioche bun.",
@@ -388,6 +407,7 @@ class Data {
         },
         {
           "id": 3,
+          "isLiked": false,
           "name": "Mushroom Swiss",
           "description":
               "Beef patty topped with sautéed mushrooms, Swiss cheese, lettuce, tomato, and mayo on a toasted Kaiser roll.",
@@ -408,6 +428,7 @@ class Data {
         },
         {
           "id": 4,
+          "isLiked": false,
           "name": "Spicy Jalapeno",
           "description":
               "Flame-grilled beef patty topped with pepper jack cheese, jalapenos, lettuce, tomato, chipotle mayo, and crispy onion rings on a pretzel bun.",
@@ -429,6 +450,7 @@ class Data {
         },
         {
           "id": 5,
+          "isLiked": false,
           "name": "Avocado Turkey",
           "description":
               "Grilled turkey patty topped with sliced avocado, pepper jack cheese, lettuce, tomato, and chipotle aioli on a whole wheat bun.",
@@ -449,6 +471,7 @@ class Data {
         },
         {
           "id": 6,
+          "isLiked": false,
           "name": "Veggie Black Bean",
           "description":
               "Spicy black bean patty topped with roasted red peppers, guacamole, lettuce, and tomato on a multigrain bun.",
@@ -468,6 +491,7 @@ class Data {
         },
         {
           "id": 7,
+          "isLiked": false,
           "name": "Double Bacon",
           "description":
               "Two juicy beef patties topped with crispy bacon, American cheese, lettuce, tomato, pickles, and special sauce on a sesame seed bun.",
@@ -489,6 +513,7 @@ class Data {
         },
         {
           "id": 8,
+          "isLiked": false,
           "name": "Teriyaki Chicken",
           "description":
               "Grilled chicken breast marinated in teriyaki sauce, topped with grilled pineapple, Swiss cheese, lettuce, and mayo on a Hawaiian bun.",
@@ -509,6 +534,7 @@ class Data {
         },
         {
           "id": 9,
+          "isLiked": false,
           "name": "Portobello Spe..",
           "description":
               "Grilled portobello mushroom cap topped with roasted red peppers, arugula, goat cheese, and balsamic glaze on a brioche bun.",
@@ -528,6 +554,7 @@ class Data {
         },
         {
           "id": 10,
+          "isLiked": false,
           "name": "Pesto Turkey",
           "description":
               "Grilled turkey patty topped with pesto aioli, roasted tomatoes, fresh mozzarella cheese, and basil on a ciabatta bun.",

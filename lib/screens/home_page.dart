@@ -1,5 +1,4 @@
 import 'package:custom_like_button/custom_like_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:salad_prog/utils/utils_data.dart';
 
@@ -13,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String? catagorySelected;
   bool tapColor = false;
-  bool likedOrNot = false;
+  bool likedOrNot = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 20.0, right: 20),
+        padding: const EdgeInsets.only(left: 20.0, right: 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                               catagorySelected = e['categoryName'];
                             });
                           },
-                          child: Container(
+                          child: SizedBox(
                             height: 70,
                             child: Row(
                               children: [
@@ -223,7 +222,7 @@ class _HomePageState extends State<HomePage> {
                                                     alignment:
                                                         Alignment.topRight,
                                                     children: [
-                                                      Container(
+                                                      SizedBox(
                                                         height: 140,
                                                         width: double.infinity,
                                                         child: Image.asset(
@@ -231,14 +230,16 @@ class _HomePageState extends State<HomePage> {
                                                           fit: BoxFit.cover,
                                                         ),
                                                       ),
-                                                      Container(
+                                                      SizedBox(
                                                         height: 50,
                                                         width: 50,
                                                         child: GestureDetector(
-                                                          onTap: () => setState(
-                                                            () => likedOrNot =
-                                                                !likedOrNot,
-                                                          ),
+                                                          onTap: () {
+                                                            setState(() {
+                                                              el['isLiked'] =
+                                                                  !el['isLiked'];
+                                                            });
+                                                          },
                                                           child:
                                                               CustomLikeButtonWithAnimation(
                                                             front: const Icon(
@@ -252,7 +253,8 @@ class _HomePageState extends State<HomePage> {
                                                                 color:
                                                                     Colors.red,
                                                                 size: 30),
-                                                            isLiked: likedOrNot,
+                                                            isLiked:
+                                                                !el['isLiked'],
                                                           ),
                                                         ),
                                                       ),
@@ -332,29 +334,42 @@ class _HomePageState extends State<HomePage> {
                                                       ),
                                                       GestureDetector(
                                                         onTap: () {},
-                                                        child: Container(
-                                                          height: 52,
-                                                          width: 50,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Colors
-                                                                .green.shade300,
-                                                            borderRadius:
-                                                                const BorderRadius
-                                                                    .only(
-                                                              topLeft: Radius
-                                                                  .circular(30),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          15),
+                                                        child: GestureDetector(
+                                                          onTap: () {
+                                                            setState(() {
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pushNamed(
+                                                                      'cartPage');
+                                                            });
+                                                          },
+                                                          child: Container(
+                                                            height: 52,
+                                                            width: 50,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Colors
+                                                                  .green
+                                                                  .shade300,
+                                                              borderRadius:
+                                                                  const BorderRadius
+                                                                      .only(
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        30),
+                                                                bottomRight:
+                                                                    Radius
+                                                                        .circular(
+                                                                            15),
+                                                              ),
                                                             ),
-                                                          ),
-                                                          alignment:
-                                                              Alignment.center,
-                                                          child: const Icon(
-                                                            Icons.add,
-                                                            color: Colors.white,
+                                                            alignment: Alignment
+                                                                .center,
+                                                            child: const Icon(
+                                                              Icons.add,
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -439,7 +454,7 @@ class _HomePageState extends State<HomePage> {
       ),
       alignment: Alignment.center,
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Text(
           '${e['categoryName']}',
           style: const TextStyle(

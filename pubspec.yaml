@@ -27,8 +27,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/salad/
-    - assets/sandwich/
-    - assets/burger/
+    - assets/
 
  
