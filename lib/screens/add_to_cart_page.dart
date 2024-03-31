@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:salad_prog/utils/utils_data.dart';
 
 class CartPage extends StatefulWidget {
@@ -174,16 +172,7 @@ class _CartPageState extends State<CartPage> {
                                 ),
                               ),
                             )
-                          : Container(
-                              alignment: Alignment.center,
-                              child: const Text(
-                                'Your Cart Is Empty',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
+                          : Container(),
                     ),
                   ],
                 ),
