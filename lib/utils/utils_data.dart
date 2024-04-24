@@ -614,6 +614,370 @@ class Data {
         }
       ]
     },
+    {
+      "categoryName": "Cakes",
+      "items": [
+        {
+          "id": 1,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Chocolate Fudge",
+          "description":
+              "Rich and moist chocolate cake layered with creamy fudge frosting.",
+          "price": 24.99,
+          "image": "assets/cakes/1.png",
+          "category": "Cakes",
+          "rating": 4.8,
+          "expectedTime": 45.00,
+          "ingredients": ["chocolate cake", "fudge frosting"]
+        },
+        {
+          "id": 2,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Red Velvet",
+          "description":
+              "Decadent red velvet cake with layers of cream cheese frosting.",
+          "price": 28.49,
+          "image": "assets/cakes/2.png",
+          "category": "Cakes",
+          "rating": 4.7,
+          "expectedTime": 50.00,
+          "ingredients": ["red velvet cake", "cream cheese frosting"]
+        },
+        {
+          "id": 3,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Carrot",
+          "description":
+              "Moist carrot cake filled with walnuts, raisins, and topped with cream cheese icing.",
+          "price": 26.99,
+          "image": "assets/cakes/3.png",
+          "category": "Cakes",
+          "rating": 4.6,
+          "expectedTime": 55.00,
+          "ingredients": [
+            "carrot cake",
+            "walnuts",
+            "raisins",
+            "cream cheese icing"
+          ]
+        },
+        {
+          "id": 4,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Lemon Blueberry",
+          "description":
+              "Zesty lemon cake with layers of blueberry filling and lemon cream cheese frosting.",
+          "price": 29.99,
+          "image": "assets/cakes/4.png",
+          "category": "Cakes",
+          "rating": 4.9,
+          "expectedTime": 60.00,
+          "ingredients": [
+            "lemon cake",
+            "blueberry filling",
+            "lemon cream cheese frosting"
+          ]
+        },
+        {
+          "id": 5,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Strawberry Short",
+          "description":
+              "Light and fluffy vanilla cake layered with fresh strawberries and whipped cream.",
+          "price": 25.49,
+          "image": "assets/cakes/5.png",
+          "category": "Cakes",
+          "rating": 4.7,
+          "expectedTime": 45.00,
+          "ingredients": ["vanilla cake", "strawberries", "whipped cream"]
+        },
+        {
+          "id": 6,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Tiramisu",
+          "description":
+              "Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese.",
+          "price": 27.99,
+          "image": "assets/cakes/6.png",
+          "category": "Cakes",
+          "rating": 4.8,
+          "expectedTime": 50.00,
+          "ingredients": [
+            "ladyfingers",
+            "mascarpone cheese",
+            "coffee",
+            "cocoa powder"
+          ]
+        },
+        {
+          "id": 7,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Coconut Cream",
+          "description":
+              "Delicate coconut cake with layers of coconut cream and toasted coconut flakes.",
+          "price": 26.49,
+          "image": "assets/cakes/7.png",
+          "category": "Cakes",
+          "rating": 4.6,
+          "expectedTime": 55.00,
+          "ingredients": [
+            "coconut cake",
+            "coconut cream",
+            "toasted coconut flakes"
+          ]
+        },
+        {
+          "id": 8,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Upside-Down",
+          "description":
+              "Buttery cake topped with caramelized pineapple rings and maraschino cherries.",
+          "price": 23.99,
+          "image": "assets/cakes/8.png",
+          "category": "Cakes",
+          "rating": 4.5,
+          "expectedTime": 40.00,
+          "ingredients": ["butter cake", "pineapple", "maraschino cherries"]
+        },
+        {
+          "id": 9,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Banana Nut",
+          "description":
+              "Moist banana cake filled with chopped nuts and topped with cream cheese frosting.",
+          "price": 24.99,
+          "image": "assets/cakes/9.png",
+          "category": "Cakes",
+          "rating": 4.7,
+          "expectedTime": 45.00,
+          "ingredients": [
+            "banana cake",
+            "chopped nuts",
+            "cream cheese frosting"
+          ]
+        },
+        {
+          "id": 10,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "German Chocolate",
+          "description":
+              "Decadent chocolate cake layered with coconut pecan frosting.",
+          "price": 27.49,
+          "image": "assets/cakes/10.png",
+          "category": "Cakes",
+          "rating": 4.8,
+          "expectedTime": 50.00,
+          "ingredients": ["chocolate cake", "coconut pecan frosting"]
+        }
+      ]
+    },
+    {
+      "categoryName": "Pasta",
+      "items": [
+        {
+          "id": 1,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Spaghetti",
+          "description":
+              "Spaghetti pasta tossed in a creamy sauce made with eggs, pancetta, and Parmesan cheese.",
+          "price": 12.99,
+          "image": "assets/pasta/1.png",
+          "category": "Pasta",
+          "rating": 4.8,
+          "expectedTime": 25.00,
+          "ingredients": [
+            "spaghetti pasta",
+            "eggs",
+            "pancetta",
+            "Parmesan cheese"
+          ]
+        },
+        {
+          "id": 2,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Fettuccine",
+          "description":
+              "Fettuccine pasta tossed in a creamy Alfredo sauce made with butter, cream, and Parmesan cheese.",
+          "price": 13.49,
+          "image": "assets/pasta/2.png",
+          "category": "Pasta",
+          "rating": 4.7,
+          "expectedTime": 30.00,
+          "ingredients": [
+            "fettuccine pasta",
+            "butter",
+            "cream",
+            "Parmesan cheese"
+          ]
+        },
+        {
+          "id": 3,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Arrabbiata",
+          "description":
+              "Penne pasta tossed in a spicy tomato sauce made with garlic, chili flakes, and fresh basil.",
+          "price": 11.99,
+          "image": "assets/pasta/3.png",
+          "category": "Pasta",
+          "rating": 4.6,
+          "expectedTime": 28.00,
+          "ingredients": [
+            "penne pasta",
+            "garlic",
+            "chili flakes",
+            "tomato sauce",
+            "fresh basil"
+          ]
+        },
+        {
+          "id": 4,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Lasagna",
+          "description":
+              "Layers of lasagna noodles, ground beef, marinara sauce, and ricotta cheese topped with melted mozzarella.",
+          "price": 14.99,
+          "image": "assets/pasta/4.png",
+          "category": "Pasta",
+          "rating": 4.9,
+          "expectedTime": 35.00,
+          "ingredients": [
+            "lasagna noodles",
+            "ground beef",
+            "marinara sauce",
+            "ricotta cheese",
+            "mozzarella cheese"
+          ]
+        },
+        {
+          "id": 5,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Ravioli",
+          "description":
+              "Delicate ravioli stuffed with ricotta cheese and spinach, served with marinara sauce.",
+          "price": 12.49,
+          "image": "assets/pasta/5.png",
+          "category": "Pasta",
+          "rating": 4.8,
+          "expectedTime": 27.00,
+          "ingredients": [
+            "ravioli",
+            "ricotta cheese",
+            "spinach",
+            "marinara sauce"
+          ]
+        },
+        {
+          "id": 6,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Primavera",
+          "description":
+              "Assorted vegetables sautéed in garlic and olive oil, tossed with your choice of pasta.",
+          "price": 11.49,
+          "image": "assets/pasta/6.png",
+          "category": "Pasta",
+          "rating": 4.7,
+          "expectedTime": 26.00,
+          "ingredients": ["assorted vegetables", "garlic", "olive oil", "pasta"]
+        },
+        {
+          "id": 7,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Shrimp Scampi",
+          "description":
+              "Shrimp sautéed in garlic butter and white wine, served over linguine pasta.",
+          "price": 15.99,
+          "image": "assets/pasta/7.png",
+          "category": "Pasta",
+          "rating": 4.8,
+          "expectedTime": 32.00,
+          "ingredients": [
+            "shrimp",
+            "garlic butter",
+            "white wine",
+            "linguine pasta"
+          ]
+        },
+        {
+          "id": 8,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Pesto Pasta",
+          "description":
+              "Penne pasta tossed in a vibrant pesto sauce made with fresh basil, pine nuts, garlic, Parmesan cheese, and olive oil.",
+          "price": 10.99,
+          "image": "assets/pasta/8.png",
+          "category": "Pasta",
+          "rating": 4.6,
+          "expectedTime": 25.00,
+          "ingredients": [
+            "penne pasta",
+            "basil",
+            "pine nuts",
+            "garlic",
+            "Parmesan cheese",
+            "olive oil"
+          ]
+        },
+        {
+          "id": 9,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Linguine",
+          "description":
+              "Linguine pasta served with a savory clam sauce made with garlic, white wine, butter, and parsley.",
+          "price": 13.49,
+          "image": "assets/pasta/9.png",
+          "category": "Pasta",
+          "rating": 4.7,
+          "expectedTime": 28.00,
+          "ingredients": [
+            "linguine pasta",
+            "clams",
+            "garlic",
+            "white wine",
+            "butter",
+            "parsley"
+          ]
+        },
+        {
+          "id": 10,
+          "itemCount": 1,
+          "isLiked": false,
+          "name": "Pappardelle",
+          "description":
+              "Wide pappardelle pasta served with a rich and earthy wild mushroom sauce, flavored with garlic, thyme, and a touch of cream.",
+          "price": 14.99,
+          "image": "assets/pasta/10.png",
+          "category": "Pasta",
+          "rating": 4.8,
+          "expectedTime": 30.00,
+          "ingredients": [
+            "pappardelle pasta",
+            "wild mushrooms",
+            "garlic",
+            "thyme",
+            "cream"
+          ]
+        },
+      ]
+    }
   ];
 
   // {

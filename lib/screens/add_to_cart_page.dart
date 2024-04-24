@@ -13,6 +13,7 @@ class _CartPageState extends State<CartPage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     var DataCartPage = ModalRoute.of(context)!.settings.arguments as dynamic;
     Data.cartItemSet.add(DataCartPage);
     Data.setToListConverterCart();
@@ -287,21 +288,51 @@ class _CartPageState extends State<CartPage> {
                         Navigator.of(context).popAndPushNamed('/');
                       });
                     },
-                    child: Container(
-                      height: MediaQuery.of(context).size.height / 14,
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'CHACKOUT',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.white,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 14,
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            alignment: Alignment.center,
+                            child: const Text(
+                              'CHACKOUT',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pushNamed("pdfPage");
+                            },
+                            child: Container(
+                              height: MediaQuery.of(context).size.height / 14,
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              alignment: Alignment.center,
+                              child: const Text(
+                                'Download PDF',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

@@ -42,7 +42,9 @@ class _DetailpageState extends State<Detailpage> {
               likeBuilder: (bool isLiked) {
                 return Icon(
                   Icons.favorite,
-                  color: isLiked ? Colors.red : Colors.black.withOpacity(0.5),
+                  color: isLiked
+                      ? const Color.fromARGB(255, 28, 22, 22)
+                      : Colors.black.withOpacity(0.5),
                   size: 26,
                 );
               },
@@ -56,6 +58,15 @@ class _DetailpageState extends State<Detailpage> {
           Container(
             alignment: Alignment.topCenter,
             color: Colors.green,
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                CircleAvatar(
+                  radius: 130,
+                  backgroundImage: AssetImage("${DataDetailPage['image']}"),
+                ),
+              ],
+            ),
           ),
           Container(
             height: Height / 1.6,
@@ -74,7 +85,7 @@ class _DetailpageState extends State<Detailpage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: Height / 9,
+                    height: Height / 10,
                     width: Width,
                   ),
                   Align(
@@ -89,7 +100,6 @@ class _DetailpageState extends State<Detailpage> {
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Row(
-                          // crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             InkWell(
