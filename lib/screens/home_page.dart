@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:custom_like_button/custom_like_button.dart';
 import 'package:flutter/material.dart';
 import 'package:salad_prog/utils/utils_data.dart';
@@ -15,6 +13,7 @@ class _HomePageState extends State<HomePage> {
   String? catagorySelected;
   bool tapColor = false;
   bool likedOrNot = true;
+  String? searchCategory;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,44 +78,26 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: 60,
                 decoration: BoxDecoration(
-                  color: Colors.blueGrey.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(),
+                  color: Colors.blueGrey.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.search,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            'Search Your Faurite Food',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Colors.grey.shade700,
-                            ),
-                          ),
-                        ],
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            Navigator.of(context)
-                                .pushNamed("fauritePage", arguments: e);
-                          });
-                        },
-                        child: const Icon(
-                          Icons.event_note_outlined,
-                        ),
-                      ),
-                    ],
+                child: TextFormField(
+                  onSaved: (val) {
+                    setState(() {
+                      val = searchCategory!.toLowerCase();
+                    });
+                  },
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(borderSide: BorderSide.none),
+                    hintText: "Search Your faurite Food Here",
+                    // this is not woking why........
+                    // prefix: Icon(Icons.search),
+                    icon: Padding(
+                      padding: EdgeInsets.only(left: 20.0),
+                      child: Icon(Icons.search),
+                    ),
+                    suffixIcon: Icon(Icons.menu),
                   ),
                 ),
               ),
@@ -180,226 +161,242 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     ...Data.itemData.map(
-                      (e) => (catagorySelected == e['categoryName'] ||
-                              catagorySelected == null)
-                          ? Column(
-                              children: [
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    children: [
-                                      ...e['items'].map(
-                                        (el) => Padding(
-                                          padding: const EdgeInsets.only(
-                                              right: 10.0),
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                Navigator.of(context).pushNamed(
-                                                  "detailPage",
-                                                  arguments: el,
-                                                );
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 250,
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width /
-                                                  2.4,
-                                              decoration: BoxDecoration(
-                                                color: Colors.grey
-                                                    .withOpacity(0.4),
-                                                borderRadius:
-                                                    BorderRadius.circular(15),
-                                              ),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Stack(
-                                                    alignment:
-                                                        Alignment.topRight,
-                                                    children: [
-                                                      SizedBox(
-                                                        height: 140,
-                                                        width: double.infinity,
-                                                        child: Image.asset(
-                                                          "${el['image']}",
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                      SizedBox(
-                                                        height: 50,
-                                                        width: 50,
-                                                        child: GestureDetector(
-                                                          onTap: () {
-                                                            setState(() {
-                                                              el['isLiked'] =
-                                                                  !el['isLiked'];
-                                                              (el['isLiked'])
-                                                                  ? Data
-                                                                      .likedItems
-                                                                      .add(el)
-                                                                  : Data
-                                                                      .likedItems
-                                                                      .remove(
-                                                                          el);
-                                                              Data.setToListConverter();
-                                                            });
-                                                          },
-                                                          child:
-                                                              CustomLikeButtonWithAnimation(
-                                                            front: const Icon(
-                                                              Icons.favorite,
-                                                              color: Colors.red,
-                                                              size: 30,
-                                                            ),
-                                                            back: const Icon(
-                                                                Icons
-                                                                    .favorite_border,
-                                                                color:
-                                                                    Colors.red,
-                                                                size: 30),
-                                                            isLiked:
-                                                                !el['isLiked'],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Column(
-                                                    children: [
-                                                      Text(
-                                                        '${el['name']}',
-                                                        style: const TextStyle(
-                                                          fontSize: 18,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                                      ),
-                                                      Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceAround,
-                                                        children: [
-                                                          Text(
-                                                            "${el['expectedTime'].toInt()} Min",
-                                                            style: TextStyle(
-                                                              fontSize: 16,
-                                                              color: Colors.grey
-                                                                  .shade600,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                          ),
-                                                          Row(
-                                                            children: [
-                                                              const Icon(
-                                                                Icons
-                                                                    .star_border,
-                                                                color: Colors
-                                                                    .amber,
-                                                              ),
-                                                              Text(
-                                                                "${el['rating']}",
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize: 16,
-                                                                  color: Colors
-                                                                      .grey
-                                                                      .shade600,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                              )
-                                                            ],
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Padding(
+                      (e) =>
+                          (catagorySelected == e['categoryName'] ||
+                                  catagorySelected == null)
+                              ? Column(
+                                  children: [
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        children: [
+                                          ...e['items'].map(
+                                            (el) =>
+                                                (searchCategory == null ||
+                                                        searchCategory ==
+                                                            el['name'])
+                                                    ? Padding(
                                                         padding:
                                                             const EdgeInsets
-                                                                .all(15.0),
-                                                        child: Text(
-                                                          "\$ ${el['price']}",
-                                                          style:
-                                                              const TextStyle(
-                                                            fontSize: 18,
-                                                            fontWeight:
-                                                                FontWeight.w900,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      GestureDetector(
-                                                        onTap: () {},
+                                                                .only(
+                                                                right: 10.0),
                                                         child: GestureDetector(
                                                           onTap: () {
                                                             setState(() {
                                                               Navigator.of(
                                                                       context)
                                                                   .pushNamed(
-                                                                      'cartPage',
-                                                                      arguments:
-                                                                          el);
+                                                                "detailPage",
+                                                                arguments: el,
+                                                              );
                                                             });
                                                           },
                                                           child: Container(
-                                                            height: 52,
-                                                            width: 50,
+                                                            height: 250,
+                                                            width: MediaQuery.of(
+                                                                        context)
+                                                                    .size
+                                                                    .width /
+                                                                2.4,
                                                             decoration:
-                                                                const BoxDecoration(
-                                                              color:
-                                                                  Colors.green,
+                                                                BoxDecoration(
+                                                              color: Colors.grey
+                                                                  .withOpacity(
+                                                                      0.4),
                                                               borderRadius:
                                                                   BorderRadius
-                                                                      .only(
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        30),
-                                                                bottomRight:
-                                                                    Radius
-                                                                        .circular(
-                                                                            15),
-                                                              ),
+                                                                      .circular(
+                                                                          15),
                                                             ),
-                                                            alignment: Alignment
-                                                                .center,
-                                                            child: const Icon(
-                                                              Icons.add,
-                                                              color:
-                                                                  Colors.white,
+                                                            child: Column(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Stack(
+                                                                  alignment:
+                                                                      Alignment
+                                                                          .topRight,
+                                                                  children: [
+                                                                    SizedBox(
+                                                                      height:
+                                                                          140,
+                                                                      width: double
+                                                                          .infinity,
+                                                                      child: Image
+                                                                          .asset(
+                                                                        "${el['image']}",
+                                                                        fit: BoxFit
+                                                                            .cover,
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(
+                                                                      height:
+                                                                          50,
+                                                                      width: 50,
+                                                                      child:
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          setState(
+                                                                              () {
+                                                                            el['isLiked'] =
+                                                                                !el['isLiked'];
+                                                                            (el['isLiked'])
+                                                                                ? Data.likedItems.add(el)
+                                                                                : Data.likedItems.remove(el);
+                                                                            Data.setToListConverter();
+                                                                          });
+                                                                        },
+                                                                        child:
+                                                                            CustomLikeButtonWithAnimation(
+                                                                          front:
+                                                                              const Icon(
+                                                                            Icons.favorite,
+                                                                            color:
+                                                                                Colors.red,
+                                                                            size:
+                                                                                30,
+                                                                          ),
+                                                                          back: const Icon(
+                                                                              Icons.favorite_border,
+                                                                              color: Colors.red,
+                                                                              size: 30),
+                                                                          isLiked:
+                                                                              !el['isLiked'],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Column(
+                                                                  children: [
+                                                                    Text(
+                                                                      '${el['name']}',
+                                                                      style:
+                                                                          const TextStyle(
+                                                                        fontSize:
+                                                                            18,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                      ),
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceAround,
+                                                                      children: [
+                                                                        Text(
+                                                                          "${el['expectedTime'].toInt()} Min",
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontSize:
+                                                                                16,
+                                                                            color:
+                                                                                Colors.grey.shade600,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                          ),
+                                                                        ),
+                                                                        Row(
+                                                                          children: [
+                                                                            const Icon(
+                                                                              Icons.star_border,
+                                                                              color: Colors.amber,
+                                                                            ),
+                                                                            Text(
+                                                                              "${el['rating']}",
+                                                                              style: TextStyle(
+                                                                                fontSize: 16,
+                                                                                color: Colors.grey.shade600,
+                                                                                fontWeight: FontWeight.bold,
+                                                                              ),
+                                                                            )
+                                                                          ],
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Row(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceBetween,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                          .all(
+                                                                          15.0),
+                                                                      child:
+                                                                          Text(
+                                                                        "\$ ${el['price']}",
+                                                                        style:
+                                                                            const TextStyle(
+                                                                          fontSize:
+                                                                              18,
+                                                                          fontWeight:
+                                                                              FontWeight.w900,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    GestureDetector(
+                                                                      onTap:
+                                                                          () {},
+                                                                      child:
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          setState(
+                                                                              () {
+                                                                            Navigator.of(context).pushNamed('cartPage',
+                                                                                arguments: el);
+                                                                          });
+                                                                        },
+                                                                        child:
+                                                                            Container(
+                                                                          height:
+                                                                              52,
+                                                                          width:
+                                                                              50,
+                                                                          decoration:
+                                                                              const BoxDecoration(
+                                                                            color:
+                                                                                Colors.green,
+                                                                            borderRadius:
+                                                                                BorderRadius.only(
+                                                                              topLeft: Radius.circular(30),
+                                                                              bottomRight: Radius.circular(15),
+                                                                            ),
+                                                                          ),
+                                                                          alignment:
+                                                                              Alignment.center,
+                                                                          child:
+                                                                              const Icon(
+                                                                            Icons.add,
+                                                                            color:
+                                                                                Colors.white,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ],
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
+                                                      )
+                                                    : Container(),
                                           ),
-                                        ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            )
-                          : Container(),
+                                    ),
+                                  ],
+                                )
+                              : Container(),
                     ),
                     const SizedBox(
                       height: 20,
