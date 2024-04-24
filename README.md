@@ -40,3 +40,7 @@ flutter pub get
 
 4. **Run the application:**
 flutter run
+
+https://github.com/PrincePatel027/app-menia_FlavorQuest/assets/149999800/e03faaa9-5bfe-4f66-b614-22d2173d22b5
+
+
