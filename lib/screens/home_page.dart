@@ -88,16 +88,22 @@ class _HomePageState extends State<HomePage> {
                       val = searchCategory!.toLowerCase();
                     });
                   },
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
+                  decoration: InputDecoration(
+                    border:
+                        const OutlineInputBorder(borderSide: BorderSide.none),
                     hintText: "Search Your faurite Food Here",
                     // this is not woking why........
                     // prefix: Icon(Icons.search),
-                    icon: Padding(
+                    icon: const Padding(
                       padding: EdgeInsets.only(left: 20.0),
                       child: Icon(Icons.search),
                     ),
-                    suffixIcon: Icon(Icons.menu),
+                    suffixIcon: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed("fauritePage");
+                      },
+                      child: const Icon(Icons.menu),
+                    ),
                   ),
                 ),
               ),
